@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A coding Project by Jeff Sagen</title>
+    <title>REWIND: A coding Project by Jeff Sagen</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@
                     <a class="nav-link "  href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="app.html">The App</a>
+                    <a class="nav-link" href="app.html">REWIND</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
@@ -50,22 +50,70 @@
 <!-- Main Section-->
 <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code: REWIND APP</h2>
 <div class="row row-cols-1 row-cols-lg-2">
     <div class="col-lg-8">
         <pre class="line-numbers"><code class="language-javascript">
-            //call Hello World
-            function helloWorld(){
-                alert("Hello World!");
+            //get the value/string from page
+            //Controller Funtion
+            
+            function getValues() {
+            
+                document.getElementById("alert").classList.add("invisible");
+                let userString = document.getElementById("userString").value;
+                let revString = reverseString(userString);
+                displayString(revString);
+            }
+            //Confirm it is a string
+            
+            
+            
+            
+            //Logic Function
+            //Reverse the String
+            function reverseString(userString) {
+                let revString = [];
+            
+               
+            
+                //reverse a string using a for loop
+                for (let index = userString.length - 1; index >= 0; index--) {
+                    revString += userString[index];
+                    
+                }
+            
+                return revString;
+            }
+            
+            //Viewer Function
+            //Display the reversed string to the user
+            function displayString(revString){
+            
+                // This Temporary litterol might not show properly
+                //write to the page 
+                document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`
+            
+                //Show the alert box
+            
+                document.getElementById("alert").classList.remove("invisible");
             }
         </code>
         </pre>
 
     </div>
     <div class="col-lg-4">
-        <p>The Code today is Arrays!</p>
-        <h5>Hellow World</h5>
-        <p>Hellow World is a function that displays an alert with a message of "Hellow World".</p>
+        <p>The Code today is Arrays and cool things we can do with them!</p>
+        <h5>Reverse Strings</h5>
+        <p> I used comments to label the import parts of my code.  The first thing to do is getting the value from userString
+            .  
+            
+            They the var userString is used for the variable array revString.  This is the varible needed to work through a for 
+            loop.  That for loop is what is used to reverse the string that was entered at getValues.
+
+            The viewer function, displayString uses the array and writes it to the page via temporary literals.  
+            After the function displayString goes and it goes to the page, you pull alert and it shows what is in the alert box that is 
+            normally invisible.
+        </p>
 
     </div>
 </div>
